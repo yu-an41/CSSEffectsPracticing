@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(45deg, #4e65ff, #92effd);
+        }
+
+        .searchBox {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            background-color: #fff;
+            box-shadow: 0 25px 35px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            transition: .3s;
+            overflow: hidden;
+        }
+
+        /* .searchBox.active {
+            width: 280px;
+        } */
+        .searchInput {
+            display: none;
+        }
+
+        .search {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-width: 50px;
+            height: 50px;
+            font-size: 1.52rem;
+            cursor: pointer;
+        }
+
+        .close {
+            min-width: 40px;
+            height: 50px;
+            display: none;
+            cursor: pointer;
+        }
+
+        .fa-xmark {
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="searchBox">
+        <div class="searchInput">
+            <input type="text" placeholder="Search Here">
+        </div>
+        <div class="search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+        <div class="close">
+            <i class="fa-solid fa-xmark"></i>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.1.js"
+        integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+
+    <script>
+        // const search = document.querySelector('.search');
+        // const searchBox = document.querySelector('.searchBox');
+        // search.addEventListener('click', function(){
+        // })
+        $('.search').click(function () {
+            $('.searchBox').css('width', '260px');
+            $('.searchInput').css('display', 'flex').css('justify-content', 'center').css('align-items', 'center');
+            $('.searchInput input').css('font-size', '1.2rem');
+            $('.search').css('display', 'none');
+            $('.close').css('display', 'flex').css('justify-content', 'center').css('align-items', 'center');
+        })
+
+        $('.close').click(function () {
+            $('.searchBox').css('width', '50px');
+            $('.searchInput').css('display', 'none');
+            $('.close').css('display', 'flex').css('align-items', 'center');
+            $('.search').css('display', 'flex');
+        })
+    </script>
+
+</body>
+
+</html>
