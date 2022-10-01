@@ -60,14 +60,14 @@
         }
 
         .close {
-            min-width: 40px;
+            min-width: 50px;
             height: 50px;
             display: none;
             cursor: pointer;
         }
 
         .fa-xmark {
-            font-size: 1.2rem;
+            font-size: 1.5rem;
         }
     </style>
 </head>
@@ -104,7 +104,7 @@
         $('.close').click(function () {
             $('.searchBox').css('width', '50px');
             $('.searchInput').css('display', 'none');
-            $('.close').css('display', 'flex').css('align-items', 'center');
+            $('.close').css('display', 'none')
             $('.search').css('display', 'flex');
         })
     </script>
