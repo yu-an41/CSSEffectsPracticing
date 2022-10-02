@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>serach bar</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
         integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -38,7 +38,7 @@
             background-color: #fff;
             box-shadow: 0 25px 35px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
-            transition: .3s;
+            transition: .5s;
             overflow: hidden;
         }
 
@@ -47,6 +47,10 @@
         } */
         .searchInput {
             display: none;
+        }
+
+        .searchInput input {
+            font-size: 1.2rem;
         }
 
         .search {
@@ -69,6 +73,16 @@
         .fa-xmark {
             font-size: 1.5rem;
         }
+
+        .active {
+            width: 260px;
+        }
+
+        .display {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
     </style>
 </head>
 
@@ -89,24 +103,38 @@
         integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
 
     <script>
-        // const search = document.querySelector('.search');
-        // const searchBox = document.querySelector('.searchBox');
-        // search.addEventListener('click', function(){
-        // })
+
         $('.search').click(function () {
-            $('.searchBox').css('width', '260px');
-            $('.searchInput').css('display', 'flex').css('justify-content', 'center').css('align-items', 'center');
-            $('.searchInput input').css('font-size', '1.2rem');
             $('.search').css('display', 'none');
-            $('.close').css('display', 'flex').css('justify-content', 'center').css('align-items', 'center');
+            $('.searchBox').addClass('active');
+            $('.searchInput').addClass('display');
+            $('.close').addClass('display');
+
+
         })
 
         $('.close').click(function () {
-            $('.searchBox').css('width', '50px');
-            $('.searchInput').css('display', 'none');
-            $('.close').css('display', 'none')
             $('.search').css('display', 'flex');
+            $('.searchBox').removeClass('active');
+            $('.searchInput').removeClass('display');
+            $('.close').removeClass('display');
+
         })
+
+        // $('.search').click(function () {
+        //     $('.searchBox').css('width', '260px');
+        //     $('.searchInput').css('display', 'flex').css('justify-content', 'center').css('align-items', 'center');
+        //     $('.searchInput input').css('font-size', '1.2rem');
+        //     $('.search').css('display', 'none');
+        //     $('.close').css('display', 'flex').css('justify-content', 'center').css('align-items', 'center');
+        // })
+
+        // $('.close').click(function () {
+        //     $('.searchBox').css('width', '50px');
+        //     $('.searchInput').css('display', 'none');
+        //     $('.close').css('display', 'none')
+        //     $('.search').css('display', 'flex');
+        // })
     </script>
 
 </body>
